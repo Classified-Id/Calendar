@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
+.app {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.app-column {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.backup {
+  display: flex;
+  gap: 10px;
+}
+
+.backup button {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.backup button:hover {
+  background: #5a6268;
+}
+
+.event-item, .reminder-item {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reminder-item.completed {
+  opacity: 0.6;
+  border-left-color: #6c757d;
+}
+
+.reminder-content {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.add-event-form, .add-reminder-form {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+}
+
+.add-event-form input,
+.add-reminder-form input,
+.add-event-form textarea,
+.add-reminder-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-event-form button,
+.add-reminder-form button {
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
